@@ -1,0 +1,51 @@
+import Vue from 'vue'
+let vm=new Vue({
+    // el:"#app",
+    data:{
+        msg:"今天天气好热啊"
+    },
+    // template:"<p>优秀的1612A</p>",
+    methods:{
+        show(){
+            console.log('show')
+        }
+    },
+    beforeCreate(){
+        console.log('beforeCreate:',this.$el)
+        console.log('beforeCreate:',this.$data)
+        console.log('beforeCreate:',this.msg)
+        console.log('beforeCreate:',this.show)
+    },
+    created(){
+        console.log('created:',this.$el)
+        console.log('created:',this.$data)
+        console.log('created:',this.msg)
+        console.log('created:',this.show)
+    },
+    beforeMount(){
+        console.log('beforeMount:',this.$el)
+        console.log('beforeMount:',this.$data)
+        console.log('beforeMount:',this.msg)
+        console.log('beforeMount:',this.show)
+    },
+    mounted(){
+        console.log('mounted:',this.$el)
+        console.log('mounted:',this.$data)
+        console.log('mounted:',this.msg)
+        console.log('mounted:',this.show)
+    },
+    beforeUpdate(){
+        console.log('beforeUpdate:',this.$el)
+        console.log('beforeUpdate:',this.$data)
+        console.log('beforeUpdate:',this.msg)
+        console.log('beforeUpdate:',this.show)
+    },
+    updated(){
+        console.log('updated:',this.$el)
+        console.log('updated:',this.$data)
+        console.log('updated:',this.msg)
+        console.log('updated:',this.show)
+    }
+})
+window.vm=vm
+vm.$mount("#app")

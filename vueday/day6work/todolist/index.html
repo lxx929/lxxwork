@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoList</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body,
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            background: #cdcdcd;
+        }
+        
+        header {
+            width: 100%;
+            height: 60px;
+            background: #323232;
+            color: aliceblue;
+            padding: 0 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        header input {
+            width: 50%;
+            padding: 3px 10px;
+            border-radius: 5px;
+            outline: 0;
+        }
+        
+        section {
+            width: 100%;
+            flex: 1;
+            padding: 0 10%;
+        }
+        
+        section div {
+            margin: 10px 0;
+        }
+        
+        section div p {
+            margin: 10px 0;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        section div ul li {
+            background: rgb(238, 238, 222);
+            padding: 0 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .num {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            background: lightblue;
+            border-radius: 50%;
+            text-align: center;
+        }
+        
+        .sty {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            background: lightblue;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .active {
+            background: lightcoral;
+        }
+        
+        p {
+            text-align: center;
+            color: #797979;
+        }
+        
+        .c {
+            cursor: pointer;
+        }
+        
+        [v-bloak] {
+            display: bolck;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper" v-bloak>
+        <header>
+            <h2>ToDoList</h2>
+            <input type="text" placeholder="添加ToDo" @keyup.13="enterfn" v-model="texts">
+        </header>
+        <section>
+            <div class="start">
+                <p>
+                    <b>正在进行</b>
+                    <span class="num">{{starttotal}}</span>
+                </p>
+                <ul>
+                    <li v-for="(item,index) in startlist" :key="index" v-show="item.flag">
+                        <div>
+                            <span class="sty" :class="{active:item.ischeck}" @click="startTap(item,index)"></span>
+                            <span>{{item.texts}}</span>
+                        </div>
+                        <button @click="startdel(item)"> 删除 </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="end">
+                <p>
+                    <b>已经完成</b>
+                    <span class="num">{{endtotal}}</span>
+                </p>
+                <ul>
+                    <li v-for="(item,index) in endlist" :key="index" v-show="item.flag">
+                        <div>
+                            <span class="sty" :class="{active:item.flag}" @click="endTap(item,index)"></span>
+                            <span v-model="texte">{{item.texte}}</span>
+                        </div>
+                        <button @click="enddel(item)"> 删除 </button>
+                    </li>
+                </ul>
+            </div>
+            <p>Copyright © 2014 todolist.cn <b v-bloak class="c">clear</b></p>
+        </section>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    let vm = new Vue({
+        el: '.wrapper',
+        data: {
+            texts: "1",
+            texte: "1",
+            allno: false,
+            startlist: [{
+                texts: "hahah",
+                flag: true,
+                ischeck: false,
+                num: 1
+            }],
+            endlist: [{
+                texte: "hahah",
+                flag: true,
+                ischeck: true,
+                num: 1
+            }]
+        },
+        computed: {
+            starttotal() {
+                return this.startlist.filter(item => {
+                    if (item.flag) {
+                        return item;
+                    }
+                }).length;
+            },
+            endtotal() {
+                return this.endlist.filter(item => {
+                    if (item.flag) {
+                        return item;
+                    }
+                }).length;
+            }
+        },
+        methods: {
+
+            enterfn() {
+                console.log(1);
+                this.startlist.push({
+                    texts: this.texts,
+                    ischeck: false,
+                    flag: true,
+                    num: 1
+                })
+            },
+            startdel(item) {
+                console.log(item)
+                item.flag = false;
+            },
+            enddel(item) {
+                console.log(item)
+                item.flag = false;
+            },
+            startTap(item, index) {
+                item.flag = false;
+                this.endlist.push({
+                    texte: item.texts,
+                    ischeck: true,
+                    flag: true,
+                    num: 1
+                })
+            },
+            endTap(item, index) {
+                item.flag = false;
+                this.startlist.push({
+                    texts: item.texte,
+                    ischeck: false,
+                    flag: true,
+                    num: 1
+                })
+            }
+        },
+    })
+</script>
+
+</html>

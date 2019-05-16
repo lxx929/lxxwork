@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        
+        html,
+        body,
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #app {
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .box {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <ul>
+            <li v-for="(item,index) in lists" :key="index" v-show="item.flag">
+                <span>
+                    姓名：{{item.name}}
+                </span>
+                <span>
+                    性别：{{item.sex}}
+                </span>
+
+                <button @click="detail(item)">详情</button>
+                <button @click="del(item)">删除</button>
+            </li>
+        </ul>
+        <hr>
+        <div class="box">
+            <input type="text" placeholder="请输入名字" v-model="name">
+            <select v-model="sex">
+                <option  v-for="(item,index) in sexs" :key="index" >
+                    {{item.sexT}}
+                </option>
+            </select>
+
+            <button @click="addTap">确认</button>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                name: "",
+                sex: "",
+                title: '增删改查',
+                sexs: [{
+                    sexT: "男"
+                }, {
+                    sexT: "女"
+                }],
+                lists: [{
+                    name: "钢铁侠",
+                    sex: "男",
+                    flag: true
+                }, {
+                    name: "黑寡妇",
+                    sex: "女",
+                    flag: true
+                }]
+            }
+        },
+        methods: {
+            detail(item) {
+                console.log(item);
+                alert("姓名：" + item.name + " 性别：" + item.sex);
+            },
+            del(item) {
+                item.flag = false;
+            },
+            addTap() {
+                console.log(this.name, this.sex)
+                this.lists.push({
+                    name: this.name,
+                    sex: this.sex,
+                    flag: true
+                });
+            }
+        },
+    })
+</script>
+
+</html>

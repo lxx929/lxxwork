@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background: lawngreen;
+        }
+        
+        ul {
+            background: lightcoral;
+            display: flex;
+            justify-content: space-around;
+            line-height: 40px;
+        }
+        
+        .wrap {
+            background: lightblue;
+        }
+        
+        span {
+            line-height: 60px;
+            font-size: 20px;
+        }
+        
+        input {
+            font-size: 20px;
+        }
+        
+        .node {
+            margin-right: 10px;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background: #ccc;
+            border-radius: 50%;
+        }
+        
+        .f {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .on {
+            color: lightseagreen;
+            border-bottom: 1px solid lightseagreen;
+        }
+        
+        .active {
+            background: red
+        }
+        
+        [v-cloak] {
+            display: none;
+        }
+        /* 加载完成后显示 */
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak v-on:click.prevent.right="righttap">
+        <p>{{num}}</p>
+        <!-- 不加载，不编译 -->
+        <p v-pre>{{num}}</p>
+
+        <div class="boxwrap" @click.self="tapboxwrap">
+            <span>{{sum}}</span>
+            <button v-on:click.prevent="sum++">点击++</button>
+            <button v-on:click="flag=!flag"> box盒子 </button>
+            <div class="box" v-show="flag">
+                我是box哦！
+            </div>
+        </div>
+
+        <div class="tapEvent">
+            <ul>
+                <li v-for="(item,index) in lists" :key="index" @click="taplist(index)" :class="{on:index===i}">
+                    {{item.tit}}
+                </li>
+            </ul>
+            <div class="wrap">
+                <span v-for="(v,s) in lists[i].cont" :key="s">{{v.txt}}</span>
+            </div>
+        </div>
+
+        <div class="title" v-html="titles">
+        </div>
+        <hr>
+        <span v-text="nums"></span>
+        <hr>
+        <span>{{nums}}</span>
+        <hr>
+        <input type="text" placeholder="我是input,我双向绑定标题" v-model="num" @keyup.13="i++">
+        <a href="http://www.baidu.com" @click.prevent.once="">点我上百度</a>
+        <hr>
+
+        <input type="text" placeholder="请输入性别" v-model="sex">
+        <p v-if="sex==='男'">你是小哥哥
+            <a href="https://music.163.com">小哥哥专属</a>
+        </p>
+        <p v-else-if="sex==='女'">你是小姐姐
+            <a href="https://music.163.com/#/song?id=26128872">小姐姐专属</a>
+        </p>
+        <p v-else>你tmd别瞎输！！
+            <a href="https://music.163.com">随便点点</a>
+        </p>
+        <hr>
+
+        <img v-bind:src="url" alt="">
+        <p @click="checkAllFn"><i class="node" :class="{'active':isCheckAll}"></i><span>全选</span></p>
+        <ul>
+            <li v-for="(item,index) in fruitList" @click="checkFn(index)" v-bind:id="index">
+                <i class="node" v-bind:class="{'active':item.isChecked}"></i>
+                <span>{{item.name}}</span>
+                <img :src="url" alt="" class="f">
+            </li>
+        </ul>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    url: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2772708293,3341297750&fm=173&app=49&f=JPEG?w=218&h=146&s=AF0DA04CD9ABB36E52CB1F810300E08A',
+                    fruitList: [{
+                        name: '苹果',
+                        isChecked: false,
+                    }, {
+                        name: '柿子',
+                        isChecked: false,
+                    }, {
+                        name: '鸭梨',
+                        isChecked: false,
+                    }, {
+                        name: '火龙果',
+                        isChecked: false
+                    }, ],
+                    isCheckAll: false, //全选状态,
+                    sex: '',
+                    titles: '<p>我是标签</p>',
+                    num: '致初学vue者',
+                    nums: "我是nums",
+                    sum: 0,
+                    flag: false,
+                    i: 0,
+                    lists: [{
+                        tit: "我是111",
+                        cont: [{
+                            txt: "赵迪第1"
+                        }, {
+                            txt: "赵迪第2"
+                        }]
+                    }, {
+                        tit: "我是222",
+                        cont: [{
+                            txt: "刘祥祥"
+                        }]
+                    }, {
+                        tit: "我是333",
+                        cont: [{
+                            txt: "赵迪1"
+                        }]
+                    }, {
+                        tit: "我是444",
+                        cont: [{
+                            txt: "刘祥祥2"
+                        }]
+                    }]
+                }
+            },
+            methods: {
+                taplist(index) {
+                    this.i = index;
+
+                },
+                tapboxwrap() {
+                    alert("你tmd瞎点啥呢？");
+                },
+                righttap() {
+                    console.log("右击没用");
+                },
+                /**
+                 * 单选
+                 */
+                checkFn(index) {
+                    //切换自身样式
+                    this.fruitList[index].isChecked = !this.fruitList[index].isChecked;
+                    //关联全选功能
+                    this.isCheckAll = this.fruitList.every(item => item.isChecked);
+                },
+                /**
+                 * 全选
+                 */
+                checkAllFn() {
+                    //切换自身样式
+                    this.isCheckAll = !this.isCheckAll;
+                    //关联控制下面的单选样式
+                    this.fruitList.forEach(item => item.isChecked = this.isCheckAll);
+
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <my-header></my-header>
+        <h1 v-if="show" id="h1">loading</h1>
+        <h1>{{msg}}</h1>
+        <hr>
+        <my-button :options="msg"></my-button>
+        <!--以自定义标签名的形式去调用组件 -->
+        <p>
+            <my-button></my-button>
+        </p>
+        <img :src="'./src/images/'+img" alt="">
+        <img :src="url" alt="">
+    </div>
+    <div id="app2">
+        <my-header></my-header>
+    </div>
+</body>
+
+</html>
