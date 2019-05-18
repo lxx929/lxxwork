@@ -3,7 +3,7 @@
     <dl v-for="(item,index) in listData" :key="index">
       <!-- {{item}} -->
       <dt>
-        <img :src="item.Image" alt>
+        <img :src="item.Image" @alertWarn="tapfun()" alt>
       </dt>
       <dd>
           <p>{{item.Name}}</p>
@@ -17,13 +17,23 @@
 
 <script>
 export default {
-  props: ["listData"],
+  // props: ["listData"],
+  props: {
+    listData:Array,
+    required:true
+  },
   data() {
     return {
-
+        batList: ['香蕉','苹果','芒果','牛油果']
     };
   },
+  methods: {
+    tapfun(value){
+      console.log(value)
+    }
+  },
   created() {
+    this.$emit('alertWarn','aa')
     console.log(this.listData);
   }
 };
