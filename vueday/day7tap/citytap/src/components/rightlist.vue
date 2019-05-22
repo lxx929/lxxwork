@@ -4,6 +4,7 @@
       <li
       v-for="(item,index) in datar[0]"
       :key="index"
+      @click="rightfn"
       >{{item.name}}</li>
     </ul>
     
@@ -14,7 +15,17 @@
 export default {
   props:{
     datar:Array
-  }
+  },
+  data(){
+    return{
+
+    }
+  },
+  methods: {
+    rightfn(){
+console.log(1)
+    }
+  },
 };
 </script>
 
@@ -39,5 +50,9 @@ li{
     line-height: 40px;
     border-radius: 15px;
     background: lightsalmon;
+}
+.active{
+  background: salmon;
+  border:1px solid #999;
 }
 </style>

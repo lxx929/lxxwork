@@ -32,8 +32,8 @@ export default {
   methods: {
     changefn(ind) {
       this.ind = ind;
-     console.log(this.ind);
-     this.list = this.datas[this.ind].cities.map(item => item.cities);
+      console.log(this.ind);
+      this.list = this.datas[this.ind].cities.map(item => item.cities);
    }
   }
 };

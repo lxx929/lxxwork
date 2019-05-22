@@ -9,8 +9,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
-const json = require('../src/data/menu.json');
 
+const json = require('../src/data/data.json');
+const lists = require('../src/data/lists.json');
 const HOST = process.env.HOST;
 const PORT = process.env.PORT && Number(process.env.PORT);
 
@@ -43,9 +44,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             poll: config.dev.poll,
         },
         before(app) {
-            app.get('/api/getData', (req, res, next) => {
-                res.send(json)
-            })
+            // app.get('/getData', (req, res, next) => {
+            //     res.send(json)
+            // });
+            app.get('/getLists', (req, res, next) => {
+                res.send(lists);
+            });
         }
     },
     plugins: [
@@ -68,7 +72,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             ignore: ['.*']
         }])
     ]
-})
+});
 
 module.exports = new Promise((resolve, reject) => {
     portfinder.basePort = process.env.PORT || config.dev.port
@@ -77,9 +81,9 @@ module.exports = new Promise((resolve, reject) => {
             reject(err)
         } else {
             // publish the new Port, necessary for e2e tests
-            process.env.PORT = port
-                // add port to devServer config
-            devWebpackConfig.devServer.port = port
+            process.env.PORT = port;
+            // add port to devServer config
+            devWebpackConfig.devServer.port = port;
 
             // Add FriendlyErrorsPlugin
             devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
@@ -90,7 +94,7 @@ module.exports = new Promise((resolve, reject) => {
                     utils.createNotifierCallback() : undefined
             }))
 
-            resolve(devWebpackConfig)
+            resolve(devWebpackConfig);
         }
-    })
-})
+    });
+});
