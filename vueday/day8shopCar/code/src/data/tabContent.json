@@ -1,0 +1,187 @@
+[{
+    "id": 0,
+    "content": [{
+            "img": "static/images/1.png",
+            "title": "红颜草莓200g",
+            "price": "13.52",
+            "del": "16.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/2.png",
+            "title": "云南蓝莓125g",
+            "price": "12.9",
+            "del": "19.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/3.png",
+            "title": "黄油桃（2粒/份）",
+            "price": "4.72",
+            "del": "5.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/4.png",
+            "title": "软皮柑（2粒/份）",
+            "price": "5.9",
+            "del": "6.9",
+            "count": 0
+        }
+    ]
+}, {
+    "id": 1,
+    "content": [{
+            "img": "static/images/5.png",
+            "title": "奥利奥朱古力面包",
+            "price": "13.52",
+            "del": "16.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/6.png",
+            "title": "小贝蛋糕肉松味",
+            "price": "12.9",
+            "del": "19.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/7.png",
+            "title": "久久鸭美维素拌菜",
+            "price": "4.72",
+            "del": "5.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/8.png",
+            "title": "3+2紫米面包",
+            "price": "5.9",
+            "del": "6.9",
+            "count": 0
+        }
+    ]
+}, {
+    "id": 2,
+    "content": [{
+            "img": "static/images/9.png",
+            "title": "活性草莓酸牛奶",
+            "price": "13.52",
+            "del": "16.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/10.png",
+            "title": "活性芒果酸牛奶",
+            "price": "12.9",
+            "del": "19.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/11.png",
+            "title": "醇香益生菌酸奶1个",
+            "price": "4.72",
+            "del": "5.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/12.png",
+            "title": "春香烟花芝士酸奶",
+            "price": "5.9",
+            "del": "6.9",
+            "count": 0
+        }
+    ]
+}, {
+    "id": 3,
+    "content": [{
+            "img": "static/images/13.png",
+            "title": "胶原蛋白红枣枸杞燕麦牛奶",
+            "price": "13.52",
+            "del": "16.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/14.png",
+            "title": "如此新鲜牛乳草莓",
+            "price": "12.9",
+            "del": "19.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/15.png",
+            "title": "新希望U谷轻餐Q弹燕麦",
+            "price": "4.72",
+            "del": "5.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/16.png",
+            "title": "光明如实无添加发酵乳",
+            "price": "5.9",
+            "del": "6.9",
+            "count": 0
+        }
+    ]
+}, {
+    "id": 4,
+    "content": [{
+            "img": "static/images/17.png",
+            "title": "红牛",
+            "price": "13.52",
+            "del": "16.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/18.png",
+            "title": "屈臣氏香草味苏打汽水",
+            "price": "12.9",
+            "del": "19.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/19.png",
+            "title": "屈臣氏苏打水原味",
+            "price": "4.72",
+            "del": "5.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/20.png",
+            "title": "北冰洋桔汁汽水",
+            "price": "5.9",
+            "del": "6.9",
+            "count": 0
+        }
+    ]
+}, {
+    "id": 5,
+    "content": [{
+            "img": "static/images/21.png",
+            "title": "雀巢",
+            "price": "13.52",
+            "del": "16.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/22.png",
+            "title": "胶原蛋白",
+            "price": "12.9",
+            "del": "19.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/23.png",
+            "title": "农夫橙汁",
+            "price": "4.72",
+            "del": "5.9",
+            "count": 0
+        },
+        {
+            "img": "static/images/24.png",
+            "title": "百事可乐",
+            "price": "5.9",
+            "del": "6.9",
+            "count": 0
+        }
+    ]
+}]
