@@ -39,7 +39,7 @@ export default {
       scrollH: [] //距离页面顶部高度的距离
     };
   },
-  computed: {
+  computed: {//实时改变
     currentIndex() {
       for (let j = 0; j < this.scrollH.length; j++) {
         let height1 = this.scrollH[j];
@@ -72,10 +72,10 @@ export default {
     },
     scrollHeight() {
       let height = 0;
-      let child = this.$refs.rightlist.children;
+      let child = this.$refs.rightlist.children;//获取dom
       this.scrollH.push(height); //
       for (let i = 0; i < child.length; i++) {
-        height += child[i].offsetHeight;
+        height += child[i].offsetHeight; //累加高度
         this.scrollH.push(height);
       }
       //   console.log(this.scrollH);

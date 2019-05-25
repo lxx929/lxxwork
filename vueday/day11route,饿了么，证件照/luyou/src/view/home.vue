@@ -13,6 +13,7 @@
           v-bind:class="{active:index===ind}"
         >{{item.title}}</li>
       </ul>
+      <button @click="loginUser">登录</button>
     </section>
     <myFooter></myFooter>
   </div>
@@ -34,6 +35,14 @@ export default {
       ]
     };
   },
+  beforeCreate() {
+    let userId = window.localStorage.getItem("userId");
+    console.log(userId,"home")
+    if (!userId) {
+      window.localStorage.setItem("userId", "");
+      console.log(userId,"homeerr")
+    }
+  },
   created() {
     // console.log(this.$router)
     // console.log(this.$route)
@@ -49,6 +58,9 @@ export default {
       // this.$router.push({path:'shop',query:{id:id}});//通过id跳动态，但是不推荐使用
       this.$router.push({ name: "shop", params: { id: id } }); //params配name
       this.ind = index;
+    },
+    loginUser() {
+      this.$router.push({ name: "login" });
     }
   }
 };

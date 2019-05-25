@@ -8,9 +8,11 @@
         <li @click="$router.push({name:'shangjia'})">商家</li>
       </ul>
     </div>
-
-    <!-- 出口路由 -->
-    <router-view></router-view>
+    <keep-alive>
+      <!-- 缓存组件状态 -->
+      <!-- 出口路由 -->
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 <script>
@@ -25,7 +27,27 @@ export default {
   created() {},
   mounted() {
     console.log(this.$route);
-  }
+  },
+  beforeEnter: (to, from, next) => {
+    // 组件守卫,里面无this，因为此时组件未创件
+    // console.log(to, from, next);
+    if (to.params.id < 5) {
+      next();
+    } else {
+      alert("找不到此店铺");
+      next("/");
+    }
+  },
+  // beforeRouteUpdate(to, from, next) {
+  //   //组件路由路径改变时触发
+  //   // console.log('beforeRouteUpdate');//组件复用触发
+  //   next();
+  // },
+  // beforeRouteLeave(to, from, next) {
+  //   //组件路由跳转，离开时触发
+  //   // console.log('beforeRouteLeave')
+  //   next();
+  // }
 };
 </script>
 <style scoped lang="">

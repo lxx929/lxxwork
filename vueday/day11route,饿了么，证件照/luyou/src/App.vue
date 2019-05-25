@@ -20,6 +20,8 @@ export default {
       console.log(data);
       this.datas = data;
     });
+
+
   },
   methods: {}
 };
