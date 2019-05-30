@@ -1,0 +1,132 @@
+[
+    {
+        "id": 0,
+        "type": "福",
+        "questions": "以下不属于我国年画重要产地的是？",
+        "options": [
+            {
+                "xh": "A",
+                "txt": "苏州桃花坞"
+            },
+            {
+                "xh": "B",
+                "txt": "天津杨柳青"
+            },
+            {
+                "xh": "C",
+                "txt": "四川攀枝花"
+            },
+            {
+                "xh": "D",
+                "txt": "山东潍坊"
+            }
+        ],
+        "answer": "A",
+        "flag": null,
+        "isRouteActive": false
+    },
+    {
+        "id": 1,
+        "type": "禄",
+        "questions": "以下不属于我国年画重要产地的是？",
+        "options": [
+            {
+                "xh": "A",
+                "txt": "苏州桃花坞1"
+            },
+            {
+                "xh": "B",
+                "txt": "天津杨柳青"
+            },
+            {
+                "xh": "C",
+                "txt": "四川攀枝花"
+            },
+            {
+                "xh": "D",
+                "txt": "山东潍坊"
+            }
+        ],
+        "answer": "A",
+        "flag": null,
+        "isRouteActive": false
+    },
+    {
+        "id": 2,
+        "type": "寿",
+        "questions": "以下不属于我国年画重要产地的是？",
+        "options": [
+            {
+                "xh": "A",
+                "txt": "苏州桃花坞2"
+            },
+            {
+                "xh": "B",
+                "txt": "天津杨柳青"
+            },
+            {
+                "xh": "C",
+                "txt": "四川攀枝花"
+            },
+            {
+                "xh": "D",
+                "txt": "山东潍坊"
+            }
+        ],
+        "answer": "A",
+        "flag": null,
+        "isRouteActive": false
+    },
+    {
+        "id": 3,
+        "type": "喜",
+        "questions": "以下不属于我国年画重要产地的是？",
+        "options": [
+            {
+                "xh": "A",
+                "txt": "苏州桃花坞3"
+            },
+            {
+                "xh": "B",
+                "txt": "天津杨柳青"
+            },
+            {
+                "xh": "C",
+                "txt": "四川攀枝花"
+            },
+            {
+                "xh": "D",
+                "txt": "山东潍坊"
+            }
+        ],
+        "answer": "A",
+        "flag": null,
+        "isRouteActive": false
+    },
+    {
+        "id": 4,
+        "type": "财",
+        "questions": "以下不属于我国年画重要产地的是？",
+        "options": [
+            {
+                "xh": "A",
+                "txt": "苏州桃花坞"
+            },
+            {
+                "xh": "B",
+                "txt": "天津杨柳青"
+            },
+            {
+                "xh": "C",
+                "txt": "四川攀枝花"
+            },
+            {
+                "xh": "D",
+                "txt": "山东潍坊"
+            }
+        ],
+        "answer": "A",
+        "flag": null,
+        "isRouteActive": false
+    }
+]

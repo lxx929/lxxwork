@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+html {
+  font-size: calc(100/375*100vw);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.warper .header, .warper .header li {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.warper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.warper .header {
+  width: 100%;
+  height: calc(0.4rem);
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.warper .header li {
+  flex: 1;
+}
+
+.warper .main {
+  flex: 1;
+  overflow: auto;
+}
+
+.warper .main .contain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.warper .main .contain .item {
+  width: 100%;
+  height: calc(1rem);
+  display: flex;
+  margin: 10px 0;
+}
+
+.warper .main .contain .item .i-left {
+  flex: 4;
+  background: blue;
+}
+
+.warper .main .contain .item .i-right {
+  flex: 6;
+}
+
+.warper .footer {
+  width: 100%;
+  height: calc(0.4rem);
+  display: flex;
+}
+
+.warper .footer li {
+  flex: 1;
+}

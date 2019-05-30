@@ -1,0 +1,47 @@
+[
+    {
+        "title":"大侦探皮卡丘",
+        "gpin":8.5,
+        "zhuin":"安瑞，雷默",
+        "img":"../../static/images/1_03.gif",
+        "tle":"购票",
+        "id":1
+    },
+    {
+        "title":"一条狗的使命",
+        "gpin":8.5,
+        "zhuin":"安瑞，雷默",
+        "img":"../../static/images/1_06.gif",
+        "tle":"购票",
+        "id":2
+    },{
+        "title":"阿拉丁",
+        "gpin":8.5,
+        "zhuin":"安瑞，雷默",
+        "img":"../../static/images/1_08.gif",
+        "tle":"预告",
+        "id":3
+    },{
+        "title":"复仇者联盟",
+        "gpin":8.5,
+        "zhuin":"安瑞，雷默",
+        "img":"../../static/images/1_10.gif",
+        "tle":"购票",
+        "id":4
+    },{
+        "title":"阿拉丁",
+        "gpin":8.5,
+        "zhuin":"安瑞，雷默",
+        "img":"../../static/images/1_08.gif",
+        "tle":"预告",
+        "id":5
+    },{
+        "title":"复仇者联盟",
+        "gpin":8.5,
+        "zhuin":"安瑞，雷默",
+        "img":"../../static/images/1_10.gif",
+        "tle":"购票",
+        "id":6
+    }
+
+]
