@@ -5,9 +5,14 @@ import App from './App'
 
 Vue.config.productionTip = false
 
+import '../node_modules/element-ui/lib/theme-chalk/index.css'; //ui css
+import ElementUI from 'element-ui' //element插件
+
+Vue.use(ElementUI);
+
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    components: { App },
+    template: '<App/>'
 })

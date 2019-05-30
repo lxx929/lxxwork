@@ -1,4 +1,5 @@
 <template>
+<div class="right">
   <dl>
     <dt>
       <div class="redbox">
@@ -8,15 +9,25 @@
     </dt>
     <dd></dd>
   </dl>
+    <el-button @click="visible = true">Button</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+      <p>Try Element</p>
+    </el-dialog>
+</div>
+  
 </template>
 
 <script>
 export default {
   props: ["dataJson"],
-  data() {
-    return {};
+
+   data: function() {
+        return { visible: false }
   },
-  methods: {}
+  methods: {},
+  components:{
+    
+  }
 };
 </script>
 
