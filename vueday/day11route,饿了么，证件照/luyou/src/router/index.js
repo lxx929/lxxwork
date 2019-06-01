@@ -104,7 +104,7 @@ const router = new vueRouter({
 //     }
 // })
 
-router.beforeEach((to, from, next) => { //meta路由元信息
+router.beforeEach((to, from, next) => { //meta路由元信息拦截校验
     if (to.matched.some(item => item.meta.required)) {
         let userId = window.localStorage.getItem('userId');
         console.log(userId, "跳");

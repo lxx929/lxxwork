@@ -123,25 +123,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.el-main{
-  margin-top:70px;
+.el-main {
+  margin-top: 70px;
 }
-.headTop{
-   display: flex;
-   justify-content: space-between;
-   line-height: 40px;
+.headTop {
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
 }
-p{
-   display: flex;
+p {
+  display: flex;
 }
-.el-row{
-  display: flex; 
-   margin:0 50% 0 20px;
+.el-row {
+  display: flex;
+  margin: 0 50% 0 20px;
 }
-.el-input__inner{
+.el-input__inner {
   width: 200px !important;
 }
-.search{
+.search {
   width: 100%;
   height: 60px;
   display: flex;

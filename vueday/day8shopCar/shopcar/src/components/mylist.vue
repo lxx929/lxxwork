@@ -1,32 +1,37 @@
 <template>
-<div class="right">
-  <dl>
-    <dt>
-      <div class="redbox">
-        <b></b>
-        <div class="num"></div>
-      </div>
-    </dt>
-    <dd></dd>
-  </dl>
+  <div class="right">
+    <dl>
+      <dt>
+        <div class="redbox">
+          <b>{{$store.state.count}}</b>
+          <div class="num">
+            <button @click="$store.commit('add')">+1</button>
+            <button @click="$store.commit('reduce')">-1</button>
+          </div>
+        </div>
+      </dt>
+      <!-- <dd>{{counts}}</dd> -->
+    </dl>
     <el-button @click="visible = true">Button</el-button>
-    <el-dialog :visible.sync="visible" title="Hello world">
-      <p>Try Element</p>
+    <el-dialog :visible.sync="visible" title="您确认购买？">
+      <p>确认</p>
+      <p>取消</p>
     </el-dialog>
-</div>
-  
+  </div>
 </template>
 
 <script>
+import {mapState} from 'vuex';
 export default {
   props: ["dataJson"],
-
-   data: function() {
-        return { visible: false }
+  data: function() {
+    return { visible: false };
   },
   methods: {},
-  components:{
-    
+  components: {
+    counts() {
+      return this.$store.state.count;
+    }
   }
 };
 </script>
@@ -37,6 +42,7 @@ export default {
   display: block;
   width: 100%;
   height: 110px;
+  font-size: 20px;
 }
 .num {
   display: flex;
@@ -48,6 +54,7 @@ export default {
 }
 .num button {
   width: 30px;
+  font-size: 20px;
 }
 .num button:active {
   background: lightblue;
