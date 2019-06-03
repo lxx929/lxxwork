@@ -3,10 +3,13 @@
     <dl>
       <dt>
         <div class="redbox">
-          <b>{{$store.state.count}}</b>
+          <!-- <b>{{$store.state.count}}</b> -->
+          <b>{{add}}</b>
           <div class="num">
-            <button @click="$store.commit('add')">+1</button>
-            <button @click="$store.commit('reduce')">-1</button>
+            <!-- <button @click="$store.commit('add')">+1</button>
+            <button @click="$store.commit('reduce')">-1</button> -->
+             <button>+1</button>
+            <button>-1</button>
           </div>
         </div>
       </dt>
@@ -21,17 +24,19 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import { mapState,mapGetters,mapMutations,mapActions } from "vuex";
 export default {
   props: ["dataJson"],
   data: function() {
     return { visible: false };
   },
   methods: {},
-  components: {
-    counts() {
-      return this.$store.state.count;
-    }
+  components: {},
+  computed: {
+      ...mapMutations(['add','reduce'])
+    // counts() {
+    //   return this.$store.state.count;
+    // }
   }
 };
 </script>

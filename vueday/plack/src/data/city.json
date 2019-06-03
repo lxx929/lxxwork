@@ -1,0 +1,29 @@
+[{
+        "title": "酸奶",
+        "newprice": 4,
+        "oldprice": 6,
+        "num": 0,
+        "id": 1
+    },
+    {
+        "title": "苹果",
+        "newprice": 10,
+        "oldprice": 12,
+        "num": 0,
+        "id": 2
+    },
+    {
+        "title": "香蕉",
+        "newprice": 12,
+        "oldprice": 19,
+        "num": 0,
+        "id": 3
+    },
+    {
+        "title": "西瓜",
+        "newprice": 5,
+        "oldprice": 10,
+        "num": 0,
+        "id": 4
+    }
+]
