@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+> element-ui写的路由切换
+
 ## Build Setup
 
 ``` bash
