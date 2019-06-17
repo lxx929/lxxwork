@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box" class="box">
+      1701B
+    </div>
+
+    <ul class="list">
+      <li class="lis">9090</li>
+    </ul>
+  </body>
+  <script>
+    // let oDiv = {
+    //     tag:'div',
+    //     props:{
+    //         id:'box',
+    //         class:'box'
+    //     },
+    //     children:['1701B']
+    // }
+
+    // let oList = {
+    //     tag:'ul',
+    //     props:{
+    //         class:'list'
+    //     },
+    //     children:[
+    //         {
+    //             tag:'li',
+    //             props:'lis',
+    //             children:['9090']
+    //         },
+    //         {
+    //             tag:'li',
+    //             props:'lis',
+    //             children:['9091']
+    //         }
+    //     ]
+    // };
+
+    // console.log(oList);
+
+    function createElement(tag, props, children) {
+      return {
+        tag,
+        props: { ...props },
+        children: [...children]
+      };
+    }
+    //1.功能
+    // 2. 参数
+    // 3. 返回值
+    // 4. 什么时候调用
+
+    let oDiv = createElement("div", { id: "box", class: "box" }, ["1701B"]);
+
+    console.log(oDiv);
+  </script>
+</html>

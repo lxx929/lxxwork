@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      console.log(React);
+
+      //有状态组件
+      class Wrap extends React.Component {
+        constructor(props) {
+          //可以不写，如果写了的话，一定调一下super
+          console.log(props);
+          super(props);
+          //定义组件内部的状态
+          this.state = {
+            count: 1,
+            name: "9090"
+          };
+        }
+        render() {
+          console.log(this);
+          let { grade } = this.props;
+          let { count } = this.state;
+          return (
+            <div>
+              <h3>{grade}</h3>
+              <div>{count}</div>
+              <button
+                onClick={() => {
+                  //setState() 异步方法  来修改组件内部的状态
+                  this.setState(
+                    {
+                      count: this.state.count + 1
+                    },
+                    () => {
+                      console.log(this.state.count);
+                    }
+                  );
+                }}
+              >
+                点击
+              </button>
+            </div>
+          );
+        }
+      }
+
+      // let wrap = React.createElement(Wrap,{grade:'1701B'});
+
+      // ReactDOM.render(wrap,document.getElementById('root'))
+
+      ReactDOM.render(<Wrap grade="1701B" />, document.getElementById("root"));
+
+      //构造函数
+      //用new来调用
+      // class A{
+      //     constructor(){
+      //         console.log('constructor');
+      //     }
+      //     init(){
+      //         console.log(12312);
+      //     }
+      // }
+
+      // console.log(new A())
+      // A.prototype.init()
+    </script>
+  </body>
+</html>

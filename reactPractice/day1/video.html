@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>渲染video</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="./js/data.js"></script>
+    <script type="text/babel">
+      console.log(data);
+      let { bottomData, topData, buttons } = data;
+      let Wrap = (
+        <div className="wrap">
+          <div className="header">
+            <h3 style={{}}>{topData.title}</h3>
+            <ul>
+              {topData.list.map(item => {
+                return (
+                  <li>
+                    <input type="radio" id={item.id} name="list" />
+                    <label htmlFor={item.id}>{item.name}</label>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="center">
+            <h3>{bottomData.title}</h3>
+            <select>
+              {bottomData.list.map(item => (
+                <option value={item.name}>{item.name}</option>
+              ))}
+            </select>
+          </div>
+          <div className="bootom">
+            {buttons.map(item => (
+              <button>{item}</button>
+            ))}
+          </div>
+        </div>
+      );
+
+      ReactDOM.render(Wrap, document.getElementById("root"));
+    </script>
+  </body>
+</html>

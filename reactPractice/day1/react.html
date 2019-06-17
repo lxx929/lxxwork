@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      console.log(React);
+
+      let arr = [{ name: "刘琦" }, { name: "孙少娜" }, { name: "王志宇" }];
+      //React元素 就是虚拟dom
+      let oP = React.createElement(
+        "p",
+        { class: "list", style: { color: "red" } },
+        ["周一"]
+      );
+      let oUl = React.createElement("ul", { class: "ul" }, [
+        arr.map(item => React.createElement("li", {}, [item.name]))
+      ]);
+      let oDiv = React.createElement("div", { id: "box" }, ["1701B", oP, oUl]);
+      console.log(oDiv, "oDiv");
+      console.log(ReactDOM);
+
+      //渲染页面
+
+      ReactDOM.render(oDiv, document.getElementById("root"));
+
+      //jsx 就是一个js对象
+      //  遇见<标签> 解析html模板,遇见</标签>解析结束
+
+      // 遇见   {  开始解析js，遇见  }   js解析结束
+
+      //一个react元素必须要有一个根节点
+
+      let grade = "周一";
+      let oDiv1 = (
+        <div className="wrap">
+          {/**/}
+          1701B
+          <p style={{ width: 100, height: 100, color: "red" }}>{grade}</p>
+          <ul>
+            {arr.map(item => {
+              return <li>{item.name}</li>;
+            })}
+          </ul>
+          <span>6666</span>
+        </div>
+      );
+
+      ReactDOM.render(oDiv1, document.getElementById("app"));
+
+      console.log(oDiv1, "oDiv1");
+    </script>
+  </body>
+</html>

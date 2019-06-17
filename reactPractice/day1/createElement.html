@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div id="box">
+        1701B
+        <p>3124</p>
+    </div> -->
+
+    <div id="root"></div>
+  </body>
+  <script>
+    // let oDiv = {
+    //     tag:'div',
+    //     props:{
+    //         id:'box'
+    //     },
+    //     children:['1701B']
+    // }
+
+    //创建一个虚拟dom
+    // 参数
+    // 返回值
+    // 何时调用
+
+    let oP = createElement("p", { class: "list" }, ["周一"]);
+
+    let oDiv1 = createElement(
+      "div",
+      {
+        id: "box",
+        class: "wrap",
+        style: {
+          width: "100px",
+          height: "100px",
+          background: "red"
+        }
+      },
+      ["1701B", oP]
+    );
+
+    // console.log(oDiv);
+    console.log(oDiv1);
+
+    function createElement(tag, props, children) {
+      return {
+        tag,
+        props: { ...props },
+        children: [...children]
+      };
+    }
+
+    // 把虚拟的dom转成真实的dom，并且把它渲染到页面里面
+
+    render(oDiv1, document.getElementById("root"));
+    function render(vTree, root) {
+      // console.log(vTree,root);
+
+      let target = createDom(vTree);
+
+      root.appendChild(target);
+      //把虚拟的dom转成真实的dom
+      function createDom(vTree) {
+        let { tag, props, children } = vTree;
+        console.log(tag, props, children);
+        //创建节点
+        let targetDom = document.createElement(tag);
+        console.log(targetDom);
+        //添加属性
+        // setAttribute(key,value)
+        console.log(Object.entries(props));
+        Object.entries(props).forEach(item => {
+          // console.log(item);
+          let [key, value] = item;
+          // console.log(key,value);
+          if (typeof value == "object") {
+            //[[id,box], [class,list]]
+            value = Object.entries(value)
+              .map(item1 => item1[0] + ":" + item1[1])
+              .join(";");
+          }
+          // width:100px;height:100px;
+          //<div style="width:100px;height:100px;" class="list">
+          targetDom.setAttribute(key, value);
+        });
+
+        //添加子节点
+        if (children) {
+          children.forEach(item => {
+            let targetText =
+              typeof item == "string"
+                ? document.createTextNode(item)
+                : createDom(item);
+            targetDom.appendChild(targetText);
+            // if(typeof item == 'string'){
+            //     targetText  = document.createTextNode(item)
+            //     targetDom.appendChild(targetText)
+            // } else {
+            //     console.log(item);// {}
+            //     targetDom.appendChild(createDom(item));
+            // }
+          });
+        }
+
+        return targetDom;
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box">
+      <!-- <ul class="ul">
+            <li>
+                一级_1
+                <div>
+                        二级_1
+                        <div>三级_1</div>
+                </div>
+            </li>
+            <li>
+                
+            </li>
+        </ul> -->
+    </div>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/7.0.0-beta.3/babel.js"></script>
+    <script type="text/babel">
+      class Floder extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            list: {
+              type: "ul",
+              props: {
+                className: "ul"
+              },
+              children: [
+                {
+                  type: "li",
+                  name: "一级_1",
+                  props: {
+                    className: "li"
+                  },
+                  children: [
+                    {
+                      type: "div",
+                      name: "二级_1",
+                      children: [
+                        {
+                          type: "div",
+                          name: "三级_1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  type: "li",
+                  name: "一级_2",
+                  props: {
+                    className: "li"
+                  },
+                  children: [
+                    {
+                      type: "div",
+                      name: "二级_2"
+                    }
+                  ]
+                }
+              ]
+            }
+          };
+        }
+        render() {
+          return this.reactDom(this.state.list, 1);
+        }
+
+        reactDom(list, num) {
+          console.log(num); // 1-0
+          let id = num;
+          return (
+            <list.type {...list.props} style={{ marginLeft: "15px" }} key={id}>
+              {list.name}
+              {list.children &&
+                list.children.map((item, index) => {
+                  id = `${num}-${index}`; //1-0 1-1
+                  return this.reactDom(item, id);
+                })}
+            </list.type>
+          );
+        }
+      }
+
+      ReactDOM.render(<Floder />, document.getElementById("box"));
+    </script>
+  </body>
+</html>

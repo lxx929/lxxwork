@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+      class Wrap extends React.Component {
+        constructor(props) {
+          console.log("constructor");
+          super(props);
+          this.state = {
+            count: 1,
+            flag: false
+          };
+        }
+        componentWillMount() {
+          console.log("componentWillMount");
+        }
+
+        render() {
+          console.log("render");
+          let { grade } = this.props;
+          let { count, flag } = this.state;
+          return (
+            <div>
+              <span>{grade}</span>
+              <div>{flag ? "取消点赞" : "点赞"}</div>
+              <div>{count}</div>
+              <button
+                onClick={() => {
+                  this.setState(
+                    {
+                      count: this.state.count + 1,
+                      flag: !this.state.flag
+                    },
+                    () => {}
+                  );
+                }}
+              >
+                点击
+              </button>
+            </div>
+          );
+        }
+
+        componentDidMount() {
+          console.log("componentDidMount");
+        }
+      }
+
+      ReactDOM.render(<Wrap grade="1701B" />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

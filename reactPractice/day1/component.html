@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    .header {
+      height: 44px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      //无状态组件，就是普通的函数，
+      //接受一个props,返回react元素
+      // 必须要外边return出来一个react元素
+
+      function Head(props) {
+        console.log(props);
+        let { title } = props;
+        return (
+          <header className="header">
+            <span>左侧</span>
+            <p>{title}</p>
+            <span>右侧</span>
+          </header>
+        );
+      }
+
+      // let head = React.createElement(Head,{title:'1701B'});
+
+      // console.log(head);
+
+      // ReactDOM.render(head,document.getElementById('root'));
+      ReactDOM.render(
+        <Head title="1701B" name="周一" />,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
