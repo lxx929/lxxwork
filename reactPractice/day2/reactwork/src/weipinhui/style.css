@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html,
+body,
+#root,
+.wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.left {
+    width: 120px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.right {
+    flex: 1;
+    height: 100%;
+    ;
+}
+
+dl {
+    display: flex;
+    flex-direction: column;
+}
+
+dt {
+    height: 120px;
+    width: 120px;
+}
+
+dt img {
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "女装",
+        "id": 1,
+        "children": [
+            {
+                "title": "裙子",
+                "img": "http://img3.redocn.com/tupian/20150312/haixinghezhenzhubeikeshiliangbeijing_3937174.jpg"
+            },
+            {
+                "title": "鞋子",
+                "img": "http://img3.redocn.com/tupian/20150312/haixinghezhenzhubeikeshiliangbeijing_3937174.jpg"
+            }
+        ]
+    },
+    {
+        "name": "男装",
+        "id": 2,
+        "children": [
+            {
+                "title": "衬衫",
+                "img": "http://img3.redocn.com/tupian/20150312/haixinghezhenzhubeikeshiliangbeijing_3937174.jpg"
+            },
+            {
+                "title": "西服",
+                "img": "http://img3.redocn.com/tupian/20150312/haixinghezhenzhubeikeshiliangbeijing_3937174.jpg"
+            }
+        ]
+    }
+]

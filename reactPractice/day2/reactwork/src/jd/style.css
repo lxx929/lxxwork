@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+dl {
+    display: flex;
+}
+
+dl dt {
+    height: 120px;
+    width: 120px;
+}
+
+dl dt img {
+    height: 100%;
+    width: 100%;
+
+}
+
+dl dd {
+    flex: 1;
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    margin: 0 10px;
+}
+
+ul li.active {
+    color: red;
+}

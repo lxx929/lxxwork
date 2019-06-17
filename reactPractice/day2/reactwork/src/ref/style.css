@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.red {
+    height: 400px;
+    width: 400px;
+    background: red;
+}
+
+.blue {
+    height: 300px;
+    width: 300px;
+    background: blue;
+}
+
+.pink {
+    height: 200px;
+    width: 200px;
+    background: pink;
+}
+
+.green {
+    height: 100px;
+    width: 100px;
+    background: green;
+}
