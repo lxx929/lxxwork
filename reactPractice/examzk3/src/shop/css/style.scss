@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    user-select: none;
+    text-decoration: none;
+}
+
+html,
+body,
+#root,
+.home {
+    height: 100%;
+    width: 100%;
+
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+
+    header {
+        height: 44px;
+        width: 100%;
+        background: gold;
+    }
+
+    section {
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    footer {
+        height: 50px;
+        width: 100%;
+        background: forestgreen;
+    }
+}
